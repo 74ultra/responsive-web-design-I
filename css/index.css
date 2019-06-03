@@ -57,6 +57,10 @@ html, body {
     font-family: 'Titillium Web', sans-serif;
 }
 
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+
 h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
@@ -69,11 +73,20 @@ h1, h2, h3, h4, h5 {
   margin: 0 auto;
 }
 
+/* container media queries */
+
+@media (max-width: 800px){
+   .container {
+       width: 800px;
+   }
+
+}
+
 /* header */
 
 nav {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	width: 880px;
     margin: 0 auto;
 
@@ -84,31 +97,54 @@ nav {
 	margin-top: 25px;
 }
 
-nav .nav-item {
+.nav-item {
+    display: flex;
+}
+
+.nav-item a {
   margin-right: 65px;
   font-size: 14px;
   color: gray;
   text-decoration: none;
 }
 
-nav .nav-img {
-	display: flex;
-}
-header nav a:hover {
+
+
+.nav-item a:hover {
   text-decoration: underline;
 }
 
-header nav a:first-child {
+.nav-item a:first-child {
   margin-left: 0;
 }
 
-header nav a:last-child {
+.nav-item a:last-child {
   margin-right: 0;
 }
 
 nav {
 	align-items: center;
  
+}
+
+/* nav bar media queries - tablet */
+
+@media (max-width: 800px) {
+    nav {
+        width: 800px;
+        flex-direction: column-reverse;
+    }
+
+    .nav-item {
+        justify-content: space-between;
+        width: 90%;
+        margin: 0 40px;
+    }
+
+    .nave-img {
+        margin: 25px 0 35px 0;
+    }
+
 }
 
 
@@ -143,6 +179,24 @@ nav {
 .cta img {
   margin-top: 69px;
 }
+
+/* header content media queries*/
+
+@media (max-width: 800px) {
+    .cta {
+        justify-content: center;
+        margin-bottom: 60px;
+    }
+
+    .cta img {
+        display: none;
+    }
+
+    .cta .cta-text {
+        margin-top: 80px;
+    }
+}
+
 
 .main-content {
   border-top: 1px solid black;
@@ -183,6 +237,8 @@ nav {
   margin-right: 0;
 }
 
+
+
 .contact {
   margin-top: 57px;
   border-top: 1px solid black;
@@ -201,6 +257,27 @@ footer {
   font-size: 14px;
   display: flex;
   justify-content: center;
+}
+
+/* main content, contact, footer media queries */
+
+@media (max-width: 800px) {
+    .main-content {
+        margin: 0 20px;
+    }
+
+    .middle-img {
+        width: 100%;
+    }
+
+    .main-content .bottom-content {
+        margin-bottom: 57px;
+    }
+
+    .contact {
+        margin: 0 20px;
+
+    }
 }
 
 /* services page */
